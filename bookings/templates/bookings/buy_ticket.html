@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Ticket</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Buy Ticket for Flight {{ flight }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_flight">Flight:</label>
+                <input type="text" class="form-control" id="id_flight" value="{{ flight }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="id_passenger">Passenger:</label>
+                {{ form.passenger }}
+            </div>
+            <div class="form-group">
+                <label for="id_seat_number">Seat Number:</label>
+                {{ form.seat_number }}
+            </div>
+            <button type="submit" class="btn btn-primary">Buy Ticket</button>
+        </form>
+    </div>
+</body>
+</html>

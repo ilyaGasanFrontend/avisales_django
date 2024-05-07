@@ -1,0 +1,1 @@
+# avisales_django
